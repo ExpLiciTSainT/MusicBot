@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jagrosh</groupId>
     <artifactId>JMusicBot</artifactId>
@@ -44,11 +47,11 @@
             <artifactId>JDA</artifactId>
             <version>4.4.1_353</version>
         </dependency>
-	<dependency>
-	    <groupId>com.github.Nagami-Yukki</groupId>
-	    <artifactId>JDA-Utilities</artifactId>
-	    <version>1.0</version>
-	</dependency>
+        <dependency>
+            <groupId>com.github.Nagami-Yukki</groupId>
+            <artifactId>JDA-Utilities</artifactId>
+            <version>1.0</version>
+        </dependency>
 
         <!-- Music Dependencies -->
         <dependency>
@@ -61,15 +64,22 @@
             <artifactId>common</artifactId>
             <version>1.8.2</version>
         </dependency>
-	<dependency>
-	    <groupId>com.github.jagrosh</groupId>
-	    <artifactId>JLyrics</artifactId>
-	    <version>master-SNAPSHOT</version>
-	</dependency>
+        <dependency>
+            <groupId>com.github.jagrosh</groupId>
+            <artifactId>JLyrics</artifactId>
+            <version>master-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.dunctebot</groupId>
             <artifactId>sourcemanagers</artifactId>
             <version>1.9.0</version>
+        </dependency>
+
+        <!-- Spotify Web API Java Library -->
+        <dependency>
+            <groupId>se.michaelthelin.spotify</groupId>
+            <artifactId>spotify-web-api-java</artifactId>
+            <version>7.2.0</version>
         </dependency>
 
         <!-- Misc Internal Dependencies -->
@@ -105,45 +115,45 @@
     </dependencies>
 
     <build>
-      <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>1.5</version>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>shade</goal>
-                    </goals>
-                    <configuration>
-                        <shadedArtifactAttached>true</shadedArtifactAttached>
-                        <shadedClassifierName>All</shadedClassifierName>
-                        <artifactSet>
-                            <includes>
-                                <include>*:*</include>
-                            </includes>
-                        </artifactSet>
-                        <transformers>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                <resource>reference.conf</resource>
-                            </transformer>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <manifestEntries>
-                                    <Main-Class>com.jagrosh.jmusicbot.JMusicBot</Main-Class>
-                                    <Specification-Title>${project.artifactId}</Specification-Title>
-                                    <Specification-Version>${project.version}</Specification-Version>
-                                    <Implementation-Title>${project.artifactId}</Implementation-Title>
-                                    <Implementation-Version>${project.version}</Implementation-Version>
-                                    <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-                                </manifestEntries>
-                            </transformer>
-                        </transformers>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-      </plugins>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>All</shadedClassifierName>
+                            <artifactSet>
+                                <includes>
+                                    <include>*:*</include>
+                                </includes>
+                            </artifactSet>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                    <resource>reference.conf</resource>
+                                </transformer>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>com.jagrosh.jmusicbot.JMusicBot</Main-Class>
+                                        <Specification-Title>${project.artifactId}</Specification-Title>
+                                        <Specification-Version>${project.version}</Specification-Version>
+                                        <Implementation-Title>${project.artifactId}</Implementation-Title>
+                                        <Implementation-Version>${project.version}</Implementation-Version>
+                                        <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <properties>
