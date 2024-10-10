@@ -30,7 +30,7 @@ maxtime = 3600
 alonetimeuntilstop = 300
 
 # Spotify Credentials
-spotifyid = "YOUR_SPOTIFY_CLIENT_ID"
-spotifysecret = "YOUR_SPOTIFY_CLIENT_SECRET"
+spotify_id = "YOUR_SPOTIFY_CLIENT_ID"
+spotify_secret = "YOUR_SPOTIFY_CLIENT_SECRET"
 
 # Additional Configurations (Add any other necessary configurations below)
