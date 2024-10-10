@@ -41,7 +41,7 @@ public class BotConfig
     private Path path = null;
     private String token, prefix, altprefix, helpWord, playlistsFolder, logLevel,
             successEmoji, warningEmoji, errorEmoji, loadingEmoji, searchingEmoji,
-            evalEngine;
+            evalEngine, spotifyId, spotifySecret;
     private boolean stayInChannel, songInGame, npImages, updatealerts, useEval, dbots;
     private long owner, maxSeconds, aloneTimeUntilStop;
     private int maxYTPlaylistPages;
@@ -76,6 +76,8 @@ public class BotConfig
             prefix = config.getString("prefix");
             altprefix = config.getString("altprefix");
             helpWord = config.getString("help");
+            spotifyId = config.getString("spotify_id");
+            spotifySecret = config.getString("spotify_secret");
             owner = config.getLong("owner");
             successEmoji = config.getString("success");
             warningEmoji = config.getString("warning");
@@ -228,6 +230,13 @@ public class BotConfig
         return prefix;
     }
     
+    public String getSpotifyId() {
+        return spotifyId;
+    }
+    public String getSpotifySecret() {
+        return spotifySecret;
+    }
+
     public String getAltPrefix()
     {
         return "NONE".equalsIgnoreCase(altprefix) ? null : altprefix;
