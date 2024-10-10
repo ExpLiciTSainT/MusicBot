@@ -1,0 +1,36 @@
+# Discord Bot Token
+token = "YOUR_DISCORD_BOT_TOKEN"
+
+# Bot Owner ID
+owner = YOUR_DISCORD_USER_ID
+
+# Prefix settings
+prefix = "!"
+altprefix = "?"
+
+# Bot Game
+game = "Listening to Music"
+
+# Bot Status
+status = "online"
+
+# Show song in status
+songinstatus = true
+
+# Show images for "Now Playing"
+npimages = true
+
+# Stay in channel
+stayinchannel = false
+
+# Max song length in seconds
+maxtime = 3600
+
+# Alone time until disconnect in seconds
+alonetimeuntilstop = 300
+
+# Spotify Credentials
+spotifyid = "YOUR_SPOTIFY_CLIENT_ID"
+spotifysecret = "YOUR_SPOTIFY_CLIENT_SECRET"
+
+# Additional Configurations (Add any other necessary configurations below)
